@@ -13,12 +13,12 @@ import connection from "./configuration/connection";
 // create express app
 const app = express();
 
-app.use(bodyParser.json({ limit: '50mb' }));
+app.use(bodyParser.json({ limit: '100mb' }));
 
 
 app.use(cors());
 //antes dele ir para qualquer rota, o sistema verifica se as informações estão diferentes
-app.use(auth && auth2);
+app.use(auth || auth2);
 // app.use(auth2);
 
 // register express routes from defined application routes
